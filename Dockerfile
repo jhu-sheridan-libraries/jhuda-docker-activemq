@@ -2,7 +2,10 @@ FROM openjdk:8-jre-alpine
 
 ENV ACTIVEMQ_VERSION 5.15.10
 ENV ACTIVEMQ_DIST=apache-activemq-$ACTIVEMQ_VERSION \
-    ACTIVEMQ_HOME=/usr/local/activemq
+    ACTIVEMQ_HOME=/usr/local/activemq \
+    ACTIVEMQ_BASE=/usr/local/activemq \
+    ACTIVEMQ_CONF=/usr/local/activemq/conf \
+    ACTIVEMQ_DATA=/usr/local/activemq/data
 
 RUN  wget -O activemq.tar.gz \
         https://archive.apache.org/dist/activemq/${ACTIVEMQ_VERSION}/${ACTIVEMQ_DIST}-bin.tar.gz && \
